@@ -4,7 +4,7 @@ house_df <- read.table('household_power_consumption.txt', header = T, sep = ';',
 sub_df <- subset(house_df, house_df$Date %in% c("1/2/2007", "2/2/2007"))
 sub_df$Global_active_power <- as.numeric(sub_df$Global_active_power)
 
-dev.copy(png, 'plot1.png', height = 480, width = 480)
+png(filename = "plot1.png", width=480, height=480)
 hist(sub_df$Global_active_power, col = 'red', 
      xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
 dev.off()

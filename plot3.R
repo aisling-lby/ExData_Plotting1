@@ -6,7 +6,7 @@ for (i in c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3')) {
   sub_df[[i]] <- as.numeric(sub_df[[i]])
 }
 
-dev.copy(png, 'plot3.png', height = 480, width = 480)
+png(filename = "plot3.png", width=480, height=480)
 plot(sub_df$datetime, sub_df$Sub_metering_1, type = 'l', xlab = "",
      ylab = "Energy sub metering")
 lines(sub_df$datetime, sub_df$Sub_metering_2, col = 'red')
